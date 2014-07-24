@@ -17,4 +17,15 @@ describe('twenty_to_ninety') do
   it('takes 20,30,...90 and returns word equivalent') do
     twenty_to_ninety(20).should(eq('twenty'))
   end
+  it('takes 20,30,...90 and returns word equivalent') do
+    twenty_to_ninety(90).should(eq('ninety'))
+  end
+end
+describe('hundreds') do
+  it('takes 100,200,...900 and returns word equivalent') do
+    hundreds(100).should(eq('one hundred'))
+  end
+  it('takes 100,200,...900 and returns word equivalent') do
+    hundreds(900).should(eq('nine hundred'))
+  end
 end
