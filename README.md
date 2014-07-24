@@ -6,4 +6,7 @@ Arrays are used to store the english equivalent words, since the numeric to be c
 This was tidier than using hashes.
 
 This was completed without human assistance, although google was used :-)
+
+Submitted by: Sean Morrison
+License: Public Domain
       
