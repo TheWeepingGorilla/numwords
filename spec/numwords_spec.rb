@@ -13,32 +13,11 @@ describe('zero_to_twenty') do
   end
 end
 
-# describe('twenty_to_ninety') do
-#   it('takes 20,30,...90 and returns word equivalent') do
-#     twenty_to_ninety(20).should(eq('twenty'))
-#   end
-#   it('takes 20,30,...90 and returns word equivalent') do
-#     twenty_to_ninety(90).should(eq('ninety'))
-#   end
-# end
-
-# describe('hundreds') do
-#   it('takes 100,200,...900 and returns word equivalent') do
-#     hundreds(100).should(eq('one hundred'))
-#   end
-#   it('takes 100,200,...900 and returns word equivalent') do
-#     hundreds(900).should(eq('nine hundred'))
-#   end
-# end
-
-# describe('thousands') do
-#   it('takes 1000,2000,...9000 and returns word equivalent') do
-#     thousands(1000).should(eq('one thousand'))
-#   end
-#   it('takes 1000,2000,...9000 and returns word equivalent') do
-#     thousands(9000).should(eq('nine thousand'))
-#   end
-# end
+describe('ten_to_ninety') do
+  it('takes an index from 0-9 and returns zero, ten, twenty...ninety') do
+    ten_to_ninety(9).should(eq('ninety'))
+  end
+end
 
 describe('numwords') do
   it('takes 1 000 000 000... 9 000 000 000 and returns word equivalent') do
@@ -53,16 +32,45 @@ describe('numwords') do
   it('takes 1 000 000 000... 999 000 000 000 and returns word equivalent') do
     numwords(999000000000).should(eq('nine hundred ninety-nine billion'))
   end
-
-  # it('takes 1 000 000 ... 9 000 000  and returns word equivalent') do
-  #   parse(1000000).should(eq('one million'))
-  # end
-  # it('takes 1 000 000 ... 9 000 000  and returns word equivalent') do
-  #   parse(9000000).should(eq('nine million'))
-  # end
-  # it('takes 1 000 000 ... 99 000 000  and returns word equivalent') do
-  #   parse(99000000).should(eq('ninety-nine million'))
-  # end
+  it('takes 1 000 000 ... 9 000 000 and returns word equivalent') do
+    numwords(1000000).should(eq('one million'))
+  end
+  it('takes 1 000 000... 9 000 000 and returns word equivalent') do
+    numwords(9000000).should(eq('nine million'))
+  end
+  it('takes 1 000 000 000... 99 000 000 000 and returns word equivalent') do
+    numwords(99000000).should(eq('ninety-nine million'))
+  end
+  it('takes 1 000 000... 999 000 000 and returns word equivalent') do
+    numwords(999000000).should(eq('nine hundred ninety-nine million'))
+  end
+  it('takes 1 000... 9 000 000 and returns word equivalent') do
+    numwords(1000).should(eq('one thousand'))
+  end
+  it('takes 1 000... 9 000 000 and returns word equivalent') do
+    numwords(9000).should(eq('nine thousand'))
+  end
+  it('takes 1 000 000 000... 99 000 000 000 and returns word equivalent') do
+    numwords(99000).should(eq('ninety-nine thousand'))
+  end
+  it('takes 1 000 000... 999 000 000 and returns word equivalent') do
+    numwords(999000).should(eq('nine hundred ninety-nine thousand'))
+  end
+  it('takes 1 000... 9 000 000 and returns word equivalent') do
+    numwords(1).should(eq('one'))
+  end
+  it('takes 1 000... 9 000 000 and returns word equivalent') do
+    numwords(9).should(eq('nine'))
+  end
+  it('takes 1 000 000 000... 99 000 000 000 and returns word equivalent') do
+    numwords(105).should(eq('one hundred five'))
+  end
+  it('takes 1 000 000... 999 000 000 and returns word equivalent') do
+    numwords(205).should(eq('two hundred five'))
+  end
+  it('takes 1 000 000... 999 000 000 and returns word equivalent') do
+    numwords(999).should(eq('nine hundred ninety-nine'))
+  end
 end
 
 
