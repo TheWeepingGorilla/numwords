@@ -39,6 +39,9 @@ def parse (num, divisor, name)
 end
 
 def numwords (number_to_convert)
+  if (number_to_convert === 0)
+    return "zero"
+  else
   result = parse(number_to_convert, 1000000000, "billion")
   number_to_convert = number_to_convert % 1000000000
   result = result + parse(number_to_convert, 1000000, "million")
@@ -47,5 +50,7 @@ def numwords (number_to_convert)
   number_to_convert = number_to_convert % 1000
   result = result + parse(number_to_convert, 1, "")
   return result
+  end
 end
+
 

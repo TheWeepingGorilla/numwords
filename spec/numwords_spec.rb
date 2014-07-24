@@ -68,9 +68,11 @@ describe('numwords') do
   it('takes 1 000 000... 999 000 000 and returns word equivalent') do
     numwords(205).should(eq('two hundred five'))
   end
-  it('takes 1 000 000... 999 000 000 and returns word equivalent') do
-    numwords(999).should(eq('nine hundred ninety-nine'))
+  it('takes 0 and returns word equivalent') do
+    numwords(0).should(eq('zero'))
   end
+
+
 end
 
 
