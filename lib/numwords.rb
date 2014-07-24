@@ -24,32 +24,37 @@ def ten_to_ninety (index)
 end
 
 
-def parse (num)
+def parse (num, divisor, name)
+
   return_string = []
+  num_to_parse = num / divisor
 
-  num_billions = num / 1000000000
-  num = num % 1000000000
-
-  if ( (num_billions > 99) && (num_billions < 1000) )
-    return_string.push(zero_to_twenty(num_billions / 100) + " hundred")
-    if (num_billions % 100 > 0)
+  if ( (num_to_parse > 99) && (num_to_parse < 1000) )
+    return_string.push(zero_to_twenty(num_to_parse / 100) + " hundred")
+    if (num_to_parse % 100 > 0)
       return_string.push(" ")
     end
-    num_billions = num_billions / 10
+    num_to_parse = num_to_parse / 10
   end
 
-  if ( (num_billions > 0) && (num_billions < 21) )
-    return_string.push(zero_to_twenty(num_billions))
-  elsif ( (num_billions > 20) && (num_billions < 100) )
-    return_string.push(ten_to_ninety(num_billions / 10))
-    if (num_billions % 10 != 0)
-      return_string.push("-" + zero_to_twenty(num_billions % 10))
+  if ( (num_to_parse > 0) && (num_to_parse < 21) )
+    return_string.push(zero_to_twenty(num_to_parse))
+  elsif ( (num_to_parse > 20) && (num_to_parse < 100) )
+    return_string.push(ten_to_ninety(num_to_parse / 10))
+    if (num_to_parse % 10 != 0)
+      return_string.push("-" + zero_to_twenty(num_to_parse % 10))
     end
   end
 
-  if (num_billions > 0)
-    return_string.push(" billion")
+  if (num_to_parse > 0)
+    return_string.push(" " + name)
   end
-
-return return_string.join
+  return return_string.join
 end
+
+def numwords (number_to_convert)
+  result = parse(number_to_convert, 1000000000, "billion")
+  number_to_convert = number_to_convert % 1000000000
+  return result
+end
+

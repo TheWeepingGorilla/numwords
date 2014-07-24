@@ -40,18 +40,18 @@ end
 #   end
 # end
 
-describe('parse') do
+describe('numwords') do
   it('takes 1 000 000 000... 9 000 000 000 and returns word equivalent') do
-    parse(1000000000).should(eq('one billion'))
+    numwords(1000000000).should(eq('one billion'))
   end
   it('takes 1 000 000 000... 9 000 000 000 and returns word equivalent') do
-    parse(9000000000).should(eq('nine billion'))
+    numwords(9000000000).should(eq('nine billion'))
   end
   it('takes 1 000 000 000... 99 000 000 000 and returns word equivalent') do
-    parse(99000000000).should(eq('ninety-nine billion'))
+    numwords(99000000000).should(eq('ninety-nine billion'))
   end
   it('takes 1 000 000 000... 999 000 000 000 and returns word equivalent') do
-    parse(999000000000).should(eq('nine hundred ninety-nine billion'))
+    numwords(999000000000).should(eq('nine hundred ninety-nine billion'))
   end
 
   # it('takes 1 000 000 ... 9 000 000  and returns word equivalent') do
