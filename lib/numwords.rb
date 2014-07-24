@@ -16,15 +16,12 @@ def parse (num, divisor, name)
     return_string.push(zero_to_twenty(num_to_parse / 100))
     return_string.push(" hundred ")
   end
-  # if (num_to_parse % 100 > 0)
-  #     return_string.push(" ")
-  # end
+
   if (num_to_parse < 1000)
       num_to_parse = num_to_parse % 100
   else
     num_to_parse = num_to_parse / 10
   end
-
 
   if ( (num_to_parse > 0) && (num_to_parse < 21) )
     return_string.push(zero_to_twenty(num_to_parse))
@@ -49,8 +46,6 @@ def numwords (number_to_convert)
   result = result + parse(number_to_convert, 1000, "thousand")
   number_to_convert = number_to_convert % 1000
   result = result + parse(number_to_convert, 1, "")
-
-
   return result
 end
 
