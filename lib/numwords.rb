@@ -23,11 +23,20 @@ def ten_to_ninety (index)
   return ten_to_ninety[index]
 end
 
+
 def parse (num)
   return_string = []
 
   num_billions = num / 1000000000
   num = num % 1000000000
+
+  if ( (num_billions > 99) && (num_billions < 1000) )
+    return_string.push(zero_to_twenty(num_billions / 100) + " hundred")
+    if (num_billions % 100 > 0)
+      return_string.push(" ")
+    end
+    num_billions = num_billions / 10
+  end
 
   if ( (num_billions > 0) && (num_billions < 21) )
     return_string.push(zero_to_twenty(num_billions))
@@ -37,8 +46,10 @@ def parse (num)
       return_string.push("-" + zero_to_twenty(num_billions % 10))
     end
   end
+
   if (num_billions > 0)
     return_string.push(" billion")
   end
+
 return return_string.join
 end
